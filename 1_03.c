@@ -6,8 +6,7 @@ int main(){
 
     int number[SIZE];
     int total = 0;
-    int max = 0; 
-    int min = 0;
+    int max,min;
     float avg = 0.0;
     srand(time(NULL));
 
