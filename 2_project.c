@@ -9,11 +9,11 @@ int main() {
     int num_id[MAX_ITEM];
     int id;
 
-    printf("상품의 종류를 입력해주세요: ");
+    printf("상품의 종류를 입력해주세요:");
     scanf("%d", &item_num);
 
     if (item_num < 1 || item_num > 100){
-        printf("1에서 100 사이의 값을 입력해주세요.\n");
+        printf("1에서 100 사이의 값을 입력해주세요:\n");
         return 1;
     }
 
