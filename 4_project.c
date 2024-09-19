@@ -67,7 +67,6 @@ void inputItem() {
     }
 }
 
-
 void outputItem() {
     int pickNumber;
     printf("판매수량 입력: 전체 상품 판매수량 입력시 1, 개별 상품 입력시 2 선택\n> ");
