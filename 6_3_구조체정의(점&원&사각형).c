@@ -1,20 +1,21 @@
 #include <stdio.h>
 #include <math.h>
 
+//구조체를 사용하여 점, 원, 사각형을 표현
 typedef struct point{
     int x;
     int y;
-}POINT;
+}POINT; //POINT라는 구조체 정의
 
 typedef struct{
     POINT center;
     double radius;
-}CIRCLE;
+}CIRCLE; //CIRCLE이라는 구조체 정의
 
 typedef struct rect{
     POINT lb;
     POINT rt;
-}RECT;
+}RECT; //RECT라는 구조체 정의
 
 double dist(struct point p1, struct point p2){
     double distance;
