@@ -15,14 +15,17 @@ int main(){
     }
 
     for(int i=0; i<SIZE; i++){
-        printf("%3d\t", number[i]);
-        if((i+1) % 10 == 0) printf("\n");
+        printf("%3d\t", number[i]); //3자리 포멧으로 오른쪽 정렬
+        if((i+1) % 10 == 0) printf("\n"); //10 출력 후 줄바꿈
     }
+    
+    //평균
     for(int i=0; i<SIZE; i++){
         total += number[i];
     }
-    avg = (float)total / SIZE;
+    avg = (float)total / SIZE; //total을 실수로 취급해라 (형변환)
 
+    //최댓값 최솟값
     max = 0;
     min = 0;
 
