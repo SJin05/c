@@ -12,8 +12,8 @@ int getLine(char* line)
 int main()
 {
     char input[100];
-    FILE* fp_src;
-    FILE* fp_dest;
+    FILE* fp_src; //소스 파일 포인터 -> 읽어올 "output.txt" 파일을 가리킴
+    FILE* fp_dest; //목적 파일 포인터로 -> 복사된 내용을 저장할 "output2.txt" 파일을 가리킴
 
     if((fp_src = fopen("output.txt", "r")) == NULL){
         printf("error...");
