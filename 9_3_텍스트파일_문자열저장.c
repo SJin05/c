@@ -5,7 +5,7 @@ int getLine(char* line)
     int ch;
     int i = 0;
     while((ch=getchar()) != '\n') line[i++] = ch;
-    line[i] = '\0';
+    line[i] = '\0'; //입력이 끝난 후 line 배열의 마지막에 \0을 추가하여 문자열의 끝을 표시
     return i;
 }
 
