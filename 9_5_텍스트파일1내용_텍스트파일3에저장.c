@@ -1,3 +1,5 @@
+//1개의 문자열과 두 개의 정수
+
 #include <stdio.h>
 
 int getLine(char* line)
