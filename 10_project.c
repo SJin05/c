@@ -56,7 +56,6 @@ void saveItems() {
         printf("파일을 열 수 없습니다.\n");
         return;
     }
-
     for (int i = 0; i < MAX_ITEM; i++) {
         if (strlen(strings[i]) > 0) {
             fprintf(fp, "상품 ID : %s\n재고량 : %d\n판매량 : %d\n판매 가격 : %d\n", strings[i], item[i], min[i], price[i]);
@@ -67,13 +66,12 @@ void saveItems() {
 }
 
 void loadItems() {
+    int i = 0;
     FILE* fp = fopen("items.txt", "r");
     if (fp == NULL) {
         printf("저장된 파일이 없습니다.\n");
         return;
     }
-
-    int i = 0;
     while (fscanf(fp, "상품 ID : %s\n재고량 : %d\n판매량 : %d\n판매 가격 : %d\n", strings[i], &item[i], &min[i], &price[i]) != EOF) {
         total_item += item[i];
         total_sold += min[i];
@@ -89,7 +87,6 @@ void inputItem() {
         int num, saleNum;
         char itemName[100];
     
-
         printf("상품ID (1~%d): ", MAX_ITEM);
         scanf("%d", &id);
          if (id < 1 || id > MAX_ITEM) {
