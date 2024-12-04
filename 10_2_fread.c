@@ -1,4 +1,5 @@
 //fread
+//array.bin에서 100개의 정수를 읽어 출력
 
 #include <stdio.h>
 
