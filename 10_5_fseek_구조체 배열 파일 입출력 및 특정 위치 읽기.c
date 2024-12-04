@@ -46,14 +46,21 @@ int main(){
     FILE* fp;
     POINT p[10];
     POINT p2;
+
+    //파일에서 좌표 읽기
     loadFile(p, 10);
     printPoints(p, 10);
 
+    //특정 위치의 데이터 읽기
     fp=fopen("struct.bin", "rb");
     if(fp == NULL)exit(-1);
+
+    //파일 시작 기준 4번째 POINT 읽기 (0부터 시작하므로 3번째 인덱스)
     fseek(fp, sizeof(POINT)*3, SEEK_SET);
     fread(&p2, sizeof(POINT), 1, fp);
     printf("p2 -> x : %d, y : %d\n", p2.x, p2.y);
+
+    //파일 끝에서 두 번째 POINT 읽기
     fseek(fp, sizeof(POINT)*-2, SEEK_END);
     fread(&p2, sizeof(POINT), 1, fp);
     printf("p2 -> x : %d, y : %d\n", p2.x, p2.y);
