@@ -5,12 +5,14 @@
 #define ROW 100
 #define COL 100
 
+//row와 col 크기의 2D 배열을 입력받아, 배열의 각 원소에 0부터 999 사이의 랜덤한 숫자를 할당
 void input2DArray(int array[][100], int row, int col){
     for(int i=0; i<row; i++){
         for(int j=0; j<col; j++) array[i][j] = rand() % 1000;
     }
 }
 
+//2D 배열을 행렬 형태로 출력
 void print2DArray(int array[][100], int row, int col){
     for(int i=0; i<row; i++){
         for(int j=0; j<col; j++) printf("[%8d] ", array[i][j]);
@@ -18,6 +20,7 @@ void print2DArray(int array[][100], int row, int col){
     }
 }
 
+//두 개의 행렬을 더하고 결과를 target 배열에 저장
 void addMatrix(int s1[][100], int s2[][100], int target[][100], int row, int col)
 {
     for(int i=0; i<row; i++){
@@ -25,6 +28,7 @@ void addMatrix(int s1[][100], int s2[][100], int target[][100], int row, int col
     }
 }
 
+//두 개의 행렬을 빼고 결과를 target 배열에 저장
 void subMatrix(int s1[][100], int s2[][100], int target[][100], int row, int col)
 {
     for(int i=0; i<row; i++){
@@ -32,6 +36,7 @@ void subMatrix(int s1[][100], int s2[][100], int target[][100], int row, int col
     }
 }
 
+//m1과 m2를 곱하여 결과를 result 배열에 저장
 void multiMatrix(int m1[][100], int m2[][100], int result[][100], int row1, int col1, int col2) {
     for (int i = 0; i < row1; i++) {
         for (int j = 0; j < col2; j++) {
