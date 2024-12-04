@@ -47,20 +47,27 @@ int main(){
     POINT p[10];
     POINT p2;
     int pi;
+
+    //파일에서 좌표 읽기 및 출력
     loadFile(p, 10);
     printPoints(p, 10);
 
     fp=fopen("struct.bin", "rb");
     if(fp == NULL)exit(-1);
-    fseek(fp, sizeof(POINT)*3, SEEK_SET);
-    pi = ftell(fp);
+    
+    fseek(fp, sizeof(POINT)*3, SEEK_SET);//파일 포인터 3번째 POINT로 이동
+    pi = ftell(fp); //파일 포인터 위치 저장
     printf("pi = %d\n", pi);
     fread(&p2, sizeof(POINT), 1, fp);
     printf("p2 -> x : %d, y : %d\n", p2.x, p2.y);
-    fseek(fp, sizeof(POINT)*-2, SEEK_END);
-    printf("pi = %d\n", ftell(fp));
+
+    
+    fseek(fp, sizeof(POINT)*-2, SEEK_END); //파일 끝에서 두 번째 POINT로 이동
+    printf("pi = %d\n", ftell(fp)); //현재 위치 출력
     fread(&p2, sizeof(POINT), 1, fp);
     printf("p2 -> x : %d, y : %d\n", p2.x, p2.y);
+
+    //파일 크기 출력
     fseek(fp,0,SEEK_END);
     printf("size = %ld\n", ftell(fp));
     fclose(fp);
